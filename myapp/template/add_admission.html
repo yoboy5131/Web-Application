@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  <style>
+    .wrap {
+      width: 1000px;
+      margin: 0 auto; /* Center the content horizontally */
+    }
+  </style>
+  <body>
+    
+  <style>
+    body {
+      background-image:url(https://th.bing.com/th/id/OIP.RE2MyQBAETVAQhozBJIdnQHaEK?rs=1&pid=ImgDetMain) ;
+      background-size: cover;
+     /* background-size: cover;
+      background-color: grey;*/
+      
+    }
+    .container-heading{
+      margin-top:50px;
+      display:flex;
+      align-items: center;
+
+      background-color: rgb(225, 225,225);
+      font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+      height: 72.5vh; /* 100vh = 100% viewport height */
+      width: 35vh;
+      display: flex;
+      flex-direction: column; /* Stack elements vertically */
+      box-shadow:0px 0px 300px rgba(0,0,0,.70) ; 
+    }
+    .container-inner {
+      background-color: rgb(44, 44, 44);
+      box-shadow: 0px 0px 100px rgba(0, 0, 0, .45);
+    }
+    div{
+      color:rgb(255, 255, 255);
+    }
+    .custom-form-background {
+    background-color: rgb(195, 195, 195);
+    border-color: gray;
+    }
+
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class= "container text-center container-heading shadow-xl " >
+    <h2 style="color: rgb(99, 99, 99);">Admission Form</h2>
+
+    <div class="container text-center container-inner box-shadow">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <label for="first_name">First Name:</label>
+          <input type="text" class="form-control custom-form-background" id="first_name" name="first_name" placeholder="Enter your first name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="last_name">Last Name:</label>
+          <input type="text" class="form-control  custom-form-background" id="last_name" name="last_name" placeholder="Enter your last name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" class="form-control  custom-form-background" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="date_of_birth">Date of Birth:</label>
+          <input type="date" class="form-control  custom-form-background" id="date_of_birth" name="date_of_birth" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address: </label>
+            <input type="text" class="form-control  custom-form-background" id="address" name="address" required>
+        </div>
+        <div class="form-group">
+            <label for="nationality">nationality </label>
+            <input type="text" class="form-control  custom-form-background" id="nationality" name="nationality" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">gender</label>
+            <input type="text" class="form-control  custom-form-background" id="gender" name="gender" required>
+        </div>
+        <div class="form-group">
+            <label for="emergency_name">Emergency Name</label>
+            <input type="text" class="form-control  custom-form-background" id="emergency_name" name="emergency_name" required>
+        </div>
+        <div class="form-group">
+            <label for="emergency_phone">Emergency Phone</label>
+            <input type="number" class="form-control  custom-form-background" id="emergency_phone" name="emergency_phone" required>
+        </div>
+        <div class="form-group">
+            <label for="emergency_email">Emergency mail</label>
+            <input type="email" class="form-control  custom-form-background" id="emergency_email" name="emergency_email" required>
+        </div>
+        <div class="form-group">
+            <label for="id_mark">Identity mark</label>
+            <input type="text" class="form-control  custom-form-background" id="id_mark" name="id_mark" required>
+        </div>
+        <div class="form-group">
+            <label for="b_group">Blood Group</label>
+            <input type="text" class="form-control  custom-form-background" id="b_group" name="b_group" required>
+        </div>
+        <div class="form-group">
+            <label for="date_admission">Date of Addmission</label>
+            <input type="date" class="form-control  custom-form-background" id="date_admission" name="date_admission" required>
+        </div>
+        <div class="form-group">
+            <label for="prefer_lan">Preffered Language</label>
+            <input type="text" class="form-control  custom-form-background" id="prefer_lan" name="prefer_lan" required>
+        </div> 
+        <div class="form-group">
+            <label for="father_occu">Father occupation</label>  
+            <input type="text" class="form-control  custom-form-background" id="father_occu" name="father_occu" required>
+        </div>
+        <div class="form-group">
+            <label for="mother_occu">Mother occupation</label>
+            <input type="text" class="form-control  custom-form-background" id="mother_occu" name="mother_occu" required>
+        </div>
+        <div class="form-group">
+            <label for="income">Income</label>
+            <input type="number" class="form-control  custom-form-background" id="income" name="income" required>
+        </div>
+        <div class="form-group">
+            <label for="extra_activities">Extracurricular activities</label>
+            <input type="text" class="form-control  custom-form-background" id="extra_activities" name="extra_activities" required>
+        </div>
+        <div class="form-group">
+            <label for="photo">Photo</label>
+            <input type="image" class="form-control  custom-form-background" id="photo" name="photo">
+        </div>
+        <div class="form-group">
+            <label for="proof_address">Proof of address</label>
+            <input type="file" class="form-control  custom-form-background" id="proof_address" name="proof_address">
+        </div>
+        <div class="form-group">
+            <label for="identity">Identity card</label>
+            <input type="file" class="form-control  custom-form-background" id="identity" name="identity" >
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      {% if form.errors %}
+        <div style="color: rgb(255, 0, 0);">
+          <h4>Please Correct Errors:</h4>
+          <ul>
+            {% for error in form.errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+</div>  
+</body>
+</html>

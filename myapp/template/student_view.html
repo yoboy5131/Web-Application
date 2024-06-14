@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admissions List</title>
+</head>
+<body>
+    <h2>Admissions List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for admission in admissions %}
+                <tr>
+                    <td>{{ admission.id }}</td>
+                    <td>{{ admission.name }}</td>  <!-- Adjust fields according to your Admission model -->
+                    <td>{{ admission.details }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
